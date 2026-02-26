@@ -1,6 +1,7 @@
 import * as ChartJS from 'chart.js';
 import 'chartjs-plugin-datalabels';
-import Tabulator from "tabulator-tables";
+declare const require: any;
+const Tabulator = require("tabulator-tables");
 import { Whisky, MapPosition } from "./whiskyClasses";
 
 enum ChartType {
@@ -211,7 +212,7 @@ class Chart {
             initialSort: [
                 {column: "Date", dir: "desc"}
             ],
-            rowClick: (e, row) => {
+            rowClick: (e: any, row: any) => {
                 window.open(row.getData().ReviewLink, "_blank");
             }
         });
